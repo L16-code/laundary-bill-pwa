@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#4a90e2">
+    <title>Laundry Bill Generator</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="icons/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <div class="bill-form" id="billForm">
+            <div class="header">
+                <h1>EZ Laundry</h1>
+            </div>
+
+            <div class="form-section">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="customerName">Name:</label>
+                        <input type="text" id="customerName" name="customerName">
+                    </div>
+                    <div class="form-group">
+                        <label for="phoneNumber">Phone #:</label>
+                        <input type="tel" id="phoneNumber" name="phoneNumber">
+                    </div>
+                    <div class="form-group checkbox-group">
+                        <label>EZ Insider:</label>
+                        <div class="checkbox-options">
+                            <label><input type="radio" name="ezInsider" value="Y"> Y</label>
+                            <label><input type="radio" name="ezInsider" value="N" checked> N</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group checkbox-group">
+                        <label>Fabric / Dryer Sheets:</label>
+                        <div class="checkbox-options">
+                            <label><input type="radio" name="fabricSheets" value="Y"> Y</label>
+                            <label><input type="radio" name="fabricSheets" value="N" checked> N</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label>Deluxe Wash | Dry | Fold:</label>
+                        <div class="checkbox-options">
+                            <label><input type="checkbox" id="deluxe9kg"> 9kg</label>
+                            <label><input type="checkbox" id="deluxe20kg"> 20kg</label>
+                        </div>
+                    </div>
+                    <div class="form-group amount-group">
+                        <label for="deluxeAmount">Amount:</label>
+                        <div class="amount-input">
+                            <span class="currency">Gh¢</span>
+                            <input type="number" id="deluxeAmount" name="deluxeAmount" step="0.01">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group checkbox-group">
+                        <label>Double Wash:</label>
+                        <div class="checkbox-options">
+                            <label><input type="radio" name="doubleWash" value="Y"> Y</label>
+                            <label><input type="radio" name="doubleWash" value="N" checked> N</label>
+                        </div>
+                    </div>
+                    <div class="form-group amount-group">
+                        <label for="doubleWashAmount">Amount:</label>
+                        <div class="amount-input">
+                            <span class="currency">Gh¢</span>
+                            <input type="number" id="doubleWashAmount" name="doubleWashAmount" step="0.01">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="discount">Discount:</label>
+                        <input type="number" id="discount" name="discount" step="0.01">
+                    </div>
+                    <div class="form-group total-group">
+                        <label for="total">Total:</label>
+                        <div class="amount-input">
+                            <span class="currency">Gh¢</span>
+                            <input type="number" id="total" name="total" step="0.01">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-row signature-row">
+                    <div class="form-group">
+                        <label for="laundrySpecialist">Laundry Specialist:</label>
+                        <input type="text" id="laundrySpecialist" name="laundrySpecialist">
+                    </div>
+                    <div class="form-group">
+                        <label for="signature">Signature:</label>
+                        <input type="text" id="signature" name="signature">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="button-section">
+            <button id="calculateBtn" class="action-button">Calculate Total</button>
+            <button id="printBtn" class="action-button">Print Bill</button>
+            <button id="resetBtn" class="action-button">Reset Form</button>
+        </div>
+
+        <div id="installPrompt" class="install-prompt">
+            <p>Install this app on your device for offline use</p>
+            <button id="installBtn">Install</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+    <script src="sw-register.js"></script>
+</body>
+</html>

@@ -1,0 +1,209 @@
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+/* Bill Form */
+.bill-form {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+    background-image: url('ez-laundry-watermark.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 50%;
+    background-blend-mode: lighten;
+    position: relative;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #4a90e2;
+}
+
+.header h1 {
+    color: #4a90e2;
+    font-size: 28px;
+}
+
+.form-section {
+    padding: 10px;
+}
+
+.form-row {
+    display: flex;
+    margin-bottom: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-right: 20px;
+    flex: 1;
+    min-width: 180px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group input[type="tel"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.checkbox-options {
+    display: flex;
+    gap: 15px;
+}
+
+.checkbox-options label {
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.amount-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.amount-input {
+    position: relative;
+    width: 100%;
+}
+
+.amount-input .currency {
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.amount-input input {
+    padding-left: 30px !important;
+}
+
+.total-group {
+    font-weight: bold;
+}
+
+.signature-row {
+    margin-top: 30px;
+}
+
+/* Button Section */
+.button-section {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    background-color: #f9f9f9;
+}
+
+.action-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4a90e2;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #3a7bc8;
+}
+
+#resetBtn {
+    background-color: #e74c3c;
+}
+
+#resetBtn:hover {
+    background-color: #c0392b;
+}
+
+/* Install Prompt */
+.install-prompt {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #eee;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.install-prompt.show {
+    display: flex;
+}
+
+#installBtn {
+    padding: 5px 10px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Print Styles */
+@media print {
+    body {
+        padding: 0;
+        background-color: white;
+    }
+    
+    .container {
+        box-shadow: none;
+        max-width: 100%;
+    }
+    
+    .button-section, 
+    .install-prompt {
+        display: none;
+    }
+    
+    .bill-form {
+        padding: 15px;
+    }
+    
+    input, select {
+        border: none !important;
+        pointer-events: none;
+    }
+}
